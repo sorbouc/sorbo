@@ -467,6 +467,13 @@ add:attributeTypes: (
   SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
   )
 add:attributeTypes: (
+  NAME 'AstAccountEncryption'
+  DESC 'Asterisk account enable SRTP'
+  EQUALITY caseIgnoreMatch
+  SUBSTR caseIgnoreSubstringsMatch
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+  )
+add:attributeTypes: (
   NAME 'AstAccountIgnoreSDPVersion'
   DESC 'Asterisk account ignore SDP version'
   EQUALITY caseIgnoreMatch
@@ -489,14 +496,21 @@ add:objectClasses: (
   MUST cn
   MAY ( AstAccountAMAFlags $$ AstAccountCallerID $$ AstAccountContext $$ AstAccountFullContact $$ AstAccountHost $$ AstAccountMailbox $$ AstMD5secret $$ AstAccountDeny $$ AstAccountPermit $$ AstAccountPort $$ AstAccountQualify $$ AstAccountType $$ AstAccountLanguage $$ AstAccountDisallowedCodec $$ AstAccountExpirationTimestamp $$ AstAccountRegistrationContext $$ AstAccountRegistrationExten $$ AstAccountNoTransfer $$ AstAccountName $$ AstAccountLastQualifyMilliseconds $$ AstAccountCallLimit $$ AstAccountSubscribeContext $$ AstAccountIPAddress $$ AstAccountUserAgent )
   )
-add:objectClasses: (
+replace:objectClasses:" (
   NAME 'AsteriskSIPUser'
   DESC 'SIP User information for Asterisk'
   SUP AsteriskExtension
   AUXILIARY
   MUST cn
   MAY ( AstAccountAccountCode $$ AstAccountAllowOverlap $$ AstAccountAllowedCodec $$ AstAccountAMAFlags $$ AstAccountCallGroup $$ AstAccountCallLimit $$ AstAccountCallerID $$ AstAccountCanCallForward $$ AstAccountCanReinvite $$ AstAccountContext $$ AstAccountDTMFMode $$ AstAccountDefaultUser $$ AstAccountDeny $$ AstAccountDisallowedCodec $$ AstAccountExpirationTimestamp $$ AstAccountFromDomain $$ AstAccountFromUser $$ AstAccountFullContact $$ AstAccountHost $$ AstAccountIgnoreSDPVersion $$ AstAccountInsecure $$ AstAccountIPAddress $$ AstAccountLanguage $$ AstAccountLastQualifyMilliseconds $$ AstAccountMailbox $$ AstAccountMusicOnHold $$ AstAccountNAT $$ AstAccountName $$ AstAccountPermit $$ AstAccountPickupGroup $$ AstAccountPort $$ AstAccountPromiscRedir $$ AstAccountQualify $$ AstAccountRTPHoldTimeout $$ AstAccountRTPTimeout $$ AstAccountRealmedPassword $$ AstAccountRegistrationContext $$ AstAccountRegistrationExten $$ AstAccountRegistrationServer $$ AstAccountRestrictCID $$ AstAccountSecret $$ AstAccountSetVar $$ AstAccountSubscribeContext $$ AstAccountTransport $$ AstAccountType $$ AstAccountUserAgent $$ AstAccountVideoSupport )
-  )
+  )": "(
+  NAME 'AsteriskSIPUser'
+  DESC 'SIP User information for Asterisk'
+  SUP AsteriskExtension
+  AUXILIARY
+  MUST cn
+  MAY ( AstAccountAccountCode $$ AstAccountAllowOverlap $$ AstAccountAllowedCodec $$ AstAccountAMAFlags $$ AstAccountCallGroup $$ AstAccountCallLimit $$ AstAccountCallerID $$ AstAccountCanCallForward $$ AstAccountCanReinvite $$ AstAccountContext $$ AstAccountDTMFMode $$ AstAccountDefaultUser $$ AstAccountDeny $$ AstAccountDisallowedCodec $$ AstAccountExpirationTimestamp $$ AstAccountFromDomain $$ AstAccountFromUser $$ AstAccountFullContact $$ AstAccountHost $$ AstAccountIgnoreSDPVersion $$ AstAccountInsecure $$ AstAccountIPAddress $$ AstAccountLanguage $$ AstAccountLastQualifyMilliseconds $$ AstAccountMailbox $$ AstAccountMusicOnHold $$ AstAccountNAT $$ AstAccountName $$ AstAccountPermit $$ AstAccountPickupGroup $$ AstAccountPort $$ AstAccountPromiscRedir $$ AstAccountQualify $$ AstAccountRTPHoldTimeout $$ AstAccountRTPTimeout $$ AstAccountRealmedPassword $$ AstAccountRegistrationContext $$ AstAccountRegistrationExten $$ AstAccountRegistrationServer $$ AstAccountRestrictCID $$ AstAccountSecret $$ AstAccountSetVar $$ AstAccountSubscribeContext $$ AstAccountTransport $$ AstAccountType $$ AstAccountUserAgent $$ AstAccountVideoSupport $$ AstAccountEncryption )
+  )"
 add:objectClasses: (
   NAME 'AsteriskConfig'
   DESC 'Asterisk configuration Information'
@@ -534,3 +548,12 @@ add:objectClasses: (
   STRUCTURAL
   MUST ( AstVoicemailMailbox )
   )
+add:objectClasses: (
+  NAME 'AsteriskSiteDefaults'
+  DESC 'Asterisk Site Default Values'
+  SUP AsteriskExtension
+  AUXILIARY
+  MUST cn
+  MAY ( AstAccountAllowOverlap $$ AstAccountAllowedCodec $$ AstAccountAMAFlags $$ AstAccountCallLimit $$ AstAccountCanReinvite $$ AstAccountDTMFMode $$ AstAccountDeny $$ AstAccountDisallowedCodec $$ AstAccountFromDomain $$ AstAccountIgnoreSDPVersion $$ AstAccountLanguage $$ AstAccountMusicOnHold $$ AstAccountNAT $$ AstAccountPermit $$ AstAccountQualify $$ AstAccountRTPHoldTimeout $$ AstAccountRTPTimeout $$ AstAccountRegistrationContext $$ AstAccountRegistrationServer $$ AstAccountSubscribeContext $$ AstAccountTransport $$ AstAccountType $$ AstAccountVideoSupport $$ AstVoicemailOptions $$ AstVoicemailTimestamp $$ AstVoicemailContext $$ AstAccountEncryption )
+  )
+
