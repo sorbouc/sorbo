@@ -1,0 +1,219 @@
+#Base Asterisk configuration container
+dn: cn=asterisk,$SUFFIX
+default:objectClass: top
+default:objectClass: nsContainer
+default:cn: asterisk
+
+#Roles
+dn: cn=Asterisk Administrator,cn=roles,cn=accounts,$SUFFIX
+default:objectClass: groupofnames
+default:objectClass: nestedgroup
+default:objectClass: top
+default:cn: Asterisk Administrator
+default:description: Responsible for Asterisk Administration
+
+# Asterisk Privileges
+dn: cn=Asterisk Site Administrator,cn=privileges,cn=pbac,$SUFFIX
+default:objectClass: nestedgroup
+default:objectClass: groupofnames
+default:objectClass: top
+default:cn: Asterisk Site Administrator
+default:description: Asterisk Site Administrator
+default:member: cn=Asterisk Administrator,cn=roles,cn=accounts,$SUFFIX
+
+dn: cn=Asterisk Extension Administrator,cn=privileges,cn=pbac,$SUFFIX
+default:objectClass: nestedgroup
+default:objectClass: groupofnames
+default:objectClass: top
+default:cn: Asterisk Extension Administrator
+default:description: Asterisk Extension Administrator
+default:member: cn=Asterisk Administrator,cn=roles,cn=accounts,$SUFFIX
+
+dn: cn=Asterisk User Administrator,cn=privileges,cn=pbac,$SUFFIX
+default:objectClass: nestedgroup
+default:objectClass: groupofnames
+default:objectClass: top
+default:cn: Asterisk User Administrator
+default:description: Asterisk User Administrator
+default:member: cn=Asterisk Administrator,cn=roles,cn=accounts,$SUFFIX
+
+dn: cn=Asterisk Voicemail Administrator,cn=privileges,cn=pbac,$SUFFIX
+default:objectClass: nestedgroup
+default:objectClass: groupofnames
+default:objectClass: top
+default:cn: Asterisk Voicemail Administrator
+default:description: Asterisk Voicemail Administrator
+default:member: cn=Asterisk Administrator,cn=roles,cn=accounts,$SUFFIX
+
+dn: cn=Asterisk Config Administrator,cn=privileges,cn=pbac,$SUFFIX
+default:objectClass: nestedgroup
+default:objectClass: groupofnames
+default:objectClass: top
+default:cn: Asterisk Config Administrator
+default:description: Asterisk Config Administrator
+default:member: cn=Asterisk Administrator,cn=roles,cn=accounts,$SUFFIX
+
+#Asterisk Site Permissions
+dn: cn=Add Asterisk Site,cn=permissions,cn=pbac,$SUFFIX
+default:objectClass: groupofnames
+default:objectClass: ipapermission
+default:objectClass: top
+default:cn: Add Asterisk Site
+default:member: cn=Asterisk Site Administrator,cn=privileges,cn=pbac,$SUFFIX
+
+dn: cn=Delete Asterisk Site,cn=permissions,cn=pbac,$SUFFIX
+default:objectClass: groupofnames
+default:objectClass: ipapermission
+default:objectClass: top
+default:cn: Delete Asterisk Site
+default:member: cn=Asterisk Site Administrator,cn=privileges,cn=pbac,$SUFFIX
+
+dn: cn=Modify Asterisk Site,cn=permissions,cn=pbac,$SUFFIX
+default:objectClass: groupofnames
+default:objectClass: ipapermission
+default:objectClass: top
+default:cn: Modify Asterisk Site
+default:member: cn=Asterisk Site Administrator,cn=privileges,cn=pbac,$SUFFIX
+
+#Asterisk Extension Permissions
+dn: cn=Add Asterisk Extension,cn=permissions,cn=pbac,$SUFFIX
+default:objectClass: groupofnames
+default:objectClass: ipapermission
+default:objectClass: top
+default:cn: Add Asterisk Extension
+default:member: cn=Asterisk Extension Administrator,cn=privileges,cn=pbac,$SUFFIX
+
+dn: cn=Delete Asterisk Extension,cn=permissions,cn=pbac,$SUFFIX
+default:objectClass: groupofnames
+default:objectClass: ipapermission
+default:objectClass: top
+default:cn: Delete Asterisk Extension
+default:member: cn=Asterisk Extension Administrator,cn=privileges,cn=pbac,$SUFFIX
+
+dn: cn=Modify Asterisk Extension,cn=permissions,cn=pbac,$SUFFIX
+default:objectClass: groupofnames
+default:objectClass: ipapermission
+default:objectClass: top
+default:cn: Modify Asterisk Extension
+default:member: cn=Asterisk Extension Administrator,cn=privileges,cn=pbac,$SUFFIX
+
+#Asterisk User Permissions
+dn: cn=Add Asterisk User,cn=permissions,cn=pbac,$SUFFIX
+default:objectClass: groupofnames
+default:objectClass: ipapermission
+default:objectClass: top
+default:cn: Add Asterisk User
+default:member: cn=Asterisk User Administrator,cn=privileges,cn=pbac,$SUFFIX
+
+dn: cn=Delete Asterisk User,cn=permissions,cn=pbac,$SUFFIX
+default:objectClass: groupofnames
+default:objectClass: ipapermission
+default:objectClass: top
+default:cn: Delete Asterisk User
+default:member: cn=Asterisk User Administrator,cn=privileges,cn=pbac,$SUFFIX
+
+dn: cn=Modify Asterisk User,cn=permissions,cn=pbac,$SUFFIX
+default:objectClass: groupofnames
+default:objectClass: ipapermission
+default:objectClass: top
+default:cn: Modify Asterisk User
+default:member: cn=Asterisk User Administrator,cn=privileges,cn=pbac,$SUFFIX
+
+#Asterisk Voicemail Permissions
+dn: cn=Add Asterisk Voicemail,cn=permissions,cn=pbac,$SUFFIX
+default:objectClass: groupofnames
+default:objectClass: ipapermission
+default:objectClass: top
+default:cn: Add Asterisk Voicemail
+default:member: cn=Asterisk Voicemail Administrator,cn=privileges,cn=pbac,$SUFFIX
+
+dn: cn=Delete Asterisk Voicemail,cn=permissions,cn=pbac,$SUFFIX
+default:objectClass: groupofnames
+default:objectClass: ipapermission
+default:objectClass: top
+default:cn: Delete Asterisk Voicemail
+default:member: cn=Asterisk Voicemail Administrator,cn=privileges,cn=pbac,$SUFFIX
+
+dn: cn=Modify Asterisk Voicemail,cn=permissions,cn=pbac,$SUFFIX
+default:objectClass: groupofnames
+default:objectClass: ipapermission
+default:objectClass: top
+default:cn: Modify Asterisk Voicemail
+default:member: cn=Asterisk Voicemail Administrator,cn=privileges,cn=pbac,$SUFFIX
+
+#Asterisk Config Permissions
+dn: cn=Add Asterisk Config,cn=permissions,cn=pbac,$SUFFIX
+default:objectClass: groupofnames
+default:objectClass: ipapermission
+default:objectClass: top
+default:cn: Add Asterisk Config
+default:member: cn=Asterisk Config Administrator,cn=privileges,cn=pbac,$SUFFIX
+
+dn: cn=Delete Asterisk Config,cn=permissions,cn=pbac,$SUFFIX
+default:objectClass: groupofnames
+default:objectClass: ipapermission
+default:objectClass: top
+default:cn: Delete Asterisk Config
+default:member: cn=Asterisk Config Administrator,cn=privileges,cn=pbac,$SUFFIX
+
+dn: cn=Modify Asterisk Config,cn=permissions,cn=pbac,$SUFFIX
+default:objectClass: groupofnames
+default:objectClass: ipapermission
+default:objectClass: top
+default:cn: Modify Asterisk Config
+default:member: cn=Asterisk Config Administrator,cn=privileges,cn=pbac,$SUFFIX
+
+
+dn: cn=asterisk,$SUFFIX
+add:aci: '(target = "ldap:///cn=*,cn=asterisk,$SUFFIX")(version 3.0;acl "permission:Add Asterisk Site";allow (add) groupdn = "ldap:///cn=Add Asterisk Site,cn=permissions,cn=pbac,$SUFFIX";)'
+add:aci: '(target = "ldap:///cn=*,cn=asterisk,$SUFFIX")(version 3.0;acl "permission:Delete Asterisk Site";allow (delete) groupdn = "ldap:///cn=Delete Asterisk Site,cn=permissions,cn=pbac,$SUFFIX";)'
+add:aci: '(targetattr = "description")(target = "ldap:///cn=*,cn=asterisk,$SUFFIX")(version 3.0;acl "permission:Modify Asterisk Site";allow (write) groupdn = "ldap:///cn=Modify Asterisk Site,cn=permissions,cn=pbac,$SUFFIX";)'
+add:aci: '(target = "ldap:///cn=users,cn=*,cn=asterisk,$SUFFIX")(version 3.0;acl "permission:Add Asterisk User";allow (add) groupdn = "ldap:///cn=Add Asterisk User,cn=permissions,cn=pbac,$SUFFIX";)'
+add:aci: '(target = "ldap:///cn=users,cn=*,cn=asterisk,$SUFFIX")(version 3.0;acl "permission:Delete Asterisk User";allow (delete) groupdn = "ldap:///cn=Delete Asterisk User,cn=permissions,cn=pbac,$SUFFIX";)'
+add:aci: '(targetattr = "description || AstAccountAccountCode || AstAccountAllowedCodec || AstAccountAllowOverlap || AstAccountAMAFlags || AstAccountCallerID || AstAccountCallGroup || AstAccountCallLimit || AstAccountCanCallForward || AstAccountCanReinvite || AstAccountContext || AstAccountDefaultUser || AstAccountDeny || AstAccountDisallowedCodec || AstAccountDTMFMode || AstAccountExpirationTimestamp || AstAccountFromDomain || AstAccountFromUser || AstAccountFullContact || AstAccountHost || AstAccountIgnoreSDPVersion || AstAccountInsecure || AstAccountIPAddress || AstAccountLanguage || AstAccountLastQualifyMilliseconds || AstAccountMailbox || AstAccountMusicOnHold || AstAccountName || AstAccountNAT || AstAccountNoTransfer || AstAccountPermit || AstAccountPickupGroup || AstAccountPort || AstAccountPromiscRedir || AstAccountQualify || AstAccountRealmedPassword || AstAccountRegistrationContext || AstAccountRegistrationExten || AstAccountRegistrationServer || AstAccountRestrictCID || AstAccountRTPHoldTimeout || AstAccountRTPTimeout || AstAccountSecret || AstAccountSetVar || AstAccountSubscribeContext || AstAccountSubscribeContext  || AstAccountTransport || AstAccountType || AstAccountUserAgent || AstAccountVideoSupport || AstMD5secret || macAddress || l || o || ou || owner || seeAlso || serialNumber || bootFile || bootParameter")(target = "ldap:///cn=users,cn=*,cn=asterisk,$SUFFIX")(version 3.0;acl "permission:Modify Asterisk User";allow (write) groupdn = "ldap:///cn=Delete Asterisk User,cn=permissions,cn=pbac,$SUFFIX";)'
+add:aci: '(target = "ldap:///cn=extensions,cn=*,cn=asterisk,$SUFFIX")(version 3.0;acl "permission:Add Asterisk Extension";allow (add) groupdn = "ldap:///cn=Add Asterisk Extension,cn=permissions,cn=pbac,$SUFFIX";)'
+add:aci: '(target = "ldap:///cn=extensions,cn=*,cn=asterisk,$SUFFIX")(version 3.0;acl "permission:Delete Asterisk Extension";allow (delete) groupdn = "ldap:///cn=Delete Asterisk Extension,cn=permissions,cn=pbac,$SUFFIX";)'
+add:aci: '(targetattr = "description || AstContext || AstExtension || AstPriority || AstApplication || AstApplicationData")(target = "ldap:///cn=extensions,cn=*,cn=asterisk,$SUFFIX")(version 3.0;acl "permission:Modify Asterisk Extension";allow (write) groupdn = "ldap:///cn=Delete Asterisk Extension,cn=permissions,cn=pbac,$SUFFIX";)'
+add:aci: '(target = "ldap:///cn=voicemail,cn=*,cn=asterisk,$SUFFIX")(version 3.0;acl "permission:Add Asterisk Voicemail";allow (add) groupdn = "ldap:///cn=Add Asterisk Voicemail,cn=permissions,cn=pbac,$SUFFIX";)'
+add:aci: '(target = "ldap:///cn=voicemail,cn=*,cn=asterisk,$SUFFIX")(version 3.0;acl "permission:Delete Asterisk Voicemail";allow (delete) groupdn = "ldap:///cn=Delete Asterisk Voicemail,cn=permissions,cn=pbac,$SUFFIX";)'
+add:aci: '(targetattr = "description || AstContext || AstVoicemailMailbox || AstVoicemailPassword || AstVoicemailFullname || AstVoicemailEmail || AstVoicemailPager || AstVoicemailOptions || AstVoicemailTimestamp || AstVoicemailContext")(target = "ldap:///cn=voicemail,cn=*,cn=asterisk,$SUFFIX")(version 3.0;acl "permission:Modify Asterisk Voicemail";allow (write) groupdn = "ldap:///cn=Delete Asterisk Voicemail,cn=permissions,cn=pbac,$SUFFIX";)'
+add:aci: '(target = "ldap:///cn=configs,cn=*,cn=asterisk,$SUFFIX")(version 3.0;acl "permission:Add Asterisk Config";allow (add) groupdn = "ldap:///cn=Add Asterisk Config,cn=permissions,cn=pbac,$SUFFIX";)'
+add:aci: '(target = "ldap:///cn=configs,cn=*,cn=asterisk,$SUFFIX")(version 3.0;acl "permission:Delete Asterisk Config";allow (delete) groupdn = "ldap:///cn=Delete Asterisk Config,cn=permissions,cn=pbac,$SUFFIX";)'
+add:aci: '(targetattr = "description || AstConfigFilename || AstConfigCategory || AstConfigCategoryMetric || AstConfigVariableName || AstConfigVariableValue || AstConfigCommented") (target = "ldap:///cn=configs,cn=*,cn=asterisk,$SUFFIX")(version 3.0;acl "permission:Modify Asterisk Config";allow (write) groupdn = "ldap:///cn=Delete Asterisk Config,cn=permissions,cn=pbac,$SUFFIX";)'
+
+#Indices
+#dn: cn=AstAccountRegistrationExten,cn=index,cn=userRoot,cn=ldbm database,cn=plugins,cn=config
+#default:cn: AstAccountRegistrationExten
+#default:ObjectClass: top
+#default:ObjectClass: nsIndex
+#default:nsSystemIndex: false
+#default:nsIndexType: eq,pres
+
+#dn: cn=AstAccountCallGroup,cn=index,cn=userRoot,cn=ldbm database,cn=plugins,cn=config
+#default:cn: AstAccountCallGroup
+#default:ObjectClass: top
+#default:ObjectClass: nsIndex
+#default:nsSystemIndex: false
+#default:nsIndexType: eq,pres
+
+#dn: cn=AstAccountPickupGroup,cn=index,cn=userRoot,cn=ldbm database,cn=plugins,cn=config
+#default:cn: AstAccountPickupGroup
+#default:ObjectClass: top
+#default:ObjectClass: nsIndex
+#default:nsSystemIndex: false
+#default:nsIndexType: eq,pres
+
+#dn: cn=AstAccountContext,cn=index,cn=userRoot,cn=ldbm database,cn=plugins,cn=config
+#default:cn: AstAccountContext
+#default:ObjectClass: top
+#default:ObjectClass: nsIndex
+#default:nsSystemIndex: false
+#default:nsIndexType: eq,pres
+
+#dn: cn=AstAccountName,cn=index,cn=userRoot,cn=ldbm database,cn=plugins,cn=config
+#default:cn: AstAccountName
+#default:ObjectClass: top
+#default:ObjectClass: nsIndex
+#default:nsSystemIndex: false
+#default:nsIndexType: eq,pres
+

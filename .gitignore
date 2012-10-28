@@ -1,0 +1,15 @@
+configure
+config.h
+config.h.in
+Makefile
+Makefile.in
+.deps/
+.libs/
+*.la
+*.lo
+*.o
+*.pyc
+.bzr
+freeipa2-dev-doc
+build
+dist/
