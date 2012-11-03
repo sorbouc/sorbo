@@ -20,39 +20,15 @@ URL:            http://www.freeipa.org/
 Source0:        http://www.freeipa.org/downloads/src/freeipa-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
-BuildRequires:  nspr-devel
-BuildRequires:  nss-devel
-BuildRequires:  openssl-devel
-BuildRequires:  openldap-devel
-BuildRequires:  krb5-devel
-BuildRequires:  krb5-workstation
-BuildRequires:  libuuid-devel
-BuildRequires:  libcurl-devel >= 7.21.7-2
-BuildRequires:  xmlrpc-c-devel >= 1.27.4
-BuildRequires:  popt-devel
 BuildRequires:  autoconf
 BuildRequires:  automake
 BuildRequires:  m4
-BuildRequires:  libtool
 BuildRequires:  gettext
 BuildRequires:  python-devel
-BuildRequires:  authconfig
-BuildRequires:  python-ldap
-BuildRequires:  python-setuptools
-BuildRequires:  python-krbV
-BuildRequires:  python-nss
-BuildRequires:  python-netaddr >= 0.7.5-3
-BuildRequires:  python-kerberos
-BuildRequires:  python-rhsm
-BuildRequires:  pyOpenSSL
 BuildRequires:  pylint
 BuildRequires:  libipa_hbac-python
-BuildRequires:  python-memcached
-BuildRequires:  sssd >= 1.8.0
 Requires: freeipa-python >= 2.2.0
 Requires: freeipa-client >= 2.2.0
-Requires: python-krbV
-Requires: python-ldap
 
 %description
 This package provides all the required freeIPA objects, schema and templates

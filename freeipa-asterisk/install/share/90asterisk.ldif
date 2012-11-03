@@ -1,4 +1,39 @@
 #
+#
+# Copyright (c) 2007-2009 Suretec Systems Ltd. - <http://www.suretecsystems.com/>
+#
+# Version: 3.2.2
+#
+# Changes:
+
+# - Added AsteriskDialplan, AsteriskAccount and AsteriskMailbox objectClasses
+#   to allow standalone dialplan, account and mailbox entries (STRUCTURAL)
+# - Added new Fields
+#   * AstAccountLanguage, AstAccountTransport, AstAccountPromiscRedir, 
+#   * AstAccountAccountCode, AstAccountSetVar, AstAccountAllowOverlap,
+#   * AstAccountVideoSupport, AstAccountIgnoreSDPVersion    
+#   Removed redundant IPaddr (there's already IPAddress)
+# - Fixed typo - 13/08/2009
+# - https://issues.asterisk.org/view.php?id=13725 - 12/08/2009
+# - Added AsteriskVoiceMail Object class and AstAccountCallLimit attribute - 28/05/2009
+#   https://issues.asterisk.org/view.php?id=15155
+# - Added AstAccountLastQualifyMilliseconds - 28/05/2009
+#   https://issues.asterisk.org/view.php?id=15156
+# - https://issues.asterisk.org/view.php?id=12860 - 04/07/2008
+# - Fixed wrong DESC - 07/05/2008
+#
+# Author: Gavin Henry - <ghenry@suretecsystems.com>
+#         Michael Kromer - <medozas@medozas.de>
+#
+# Asterisk LDAP Schema
+#
+# Digium root OID (http://www.iana.org/assignments/enterprise-numbers)
+#
+#  1.3.6.1.4.1.22736
+#  1.3.6.1.4.1.22736.5      LDAP elements
+#  1.3.6.1.4.1.22736.5.4    Attribute Types
+#  1.3.6.1.4.1.22736.5.5    Object Classes
+#
 ################################################################################
 #
 dn: cn=schema
@@ -6,7 +41,7 @@ dn: cn=schema
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.1
   NAME 'AstContext'
   DESC 'Asterisk Context'
   EQUALITY caseIgnoreMatch
@@ -17,7 +52,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.2
   NAME 'AstExtension'
   DESC 'Asterisk Extension'
   EQUALITY caseIgnoreMatch
@@ -28,7 +63,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.3
   NAME 'AstPriority'
   DESC 'Asterisk Priority'
   EQUALITY caseIgnoreMatch
@@ -39,7 +74,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.4
   NAME 'AstApplication'
   DESC 'Asterisk Application'
   EQUALITY caseIgnoreMatch
@@ -50,7 +85,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.5
   NAME 'AstApplicationData'
   DESC 'Asterisk Application Data'
   EQUALITY caseIgnoreMatch
@@ -61,7 +96,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.6
   NAME 'AstAccountAMAFlags'
   DESC 'Asterisk Account AMA Flags'
   EQUALITY caseIgnoreMatch
@@ -72,7 +107,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.7
   NAME 'AstAccountCallerID'
   DESC 'Asterisk Account CallerID'
   EQUALITY caseIgnoreMatch
@@ -83,7 +118,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.8
   NAME 'AstAccountContext'
   DESC 'Asterisk Account Context'
   EQUALITY caseIgnoreMatch
@@ -94,7 +129,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.9
   NAME 'AstAccountMailbox'
   DESC 'Asterisk Account Mailbox'
   EQUALITY caseIgnoreMatch
@@ -105,7 +140,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.10
   NAME 'AstMD5secret'
   DESC 'Asterisk Account MD5 Secret'
   EQUALITY caseIgnoreMatch
@@ -116,7 +151,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.11
   NAME 'AstAccountDeny'
   DESC 'Asterisk Account Deny'
   EQUALITY caseIgnoreMatch
@@ -127,7 +162,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.12
   NAME 'AstAccountPermit'
   DESC 'Asterisk Account Permit'
   EQUALITY caseIgnoreMatch
@@ -138,7 +173,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.13
   NAME 'AstAccountQualify'
   DESC 'Asterisk Account Qualify'
   EQUALITY caseIgnoreMatch
@@ -149,7 +184,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.14
   NAME 'AstAccountType'
   DESC 'Asterisk Account Type'
   EQUALITY caseIgnoreMatch
@@ -160,7 +195,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.15
   NAME 'AstAccountDisallowedCodec'
   DESC 'Asterisk Account Disallowed Codec'
   EQUALITY caseIgnoreMatch
@@ -171,7 +206,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.16
   NAME 'AstAccountExpirationTimestamp'
   DESC 'Asterisk Account Expiration Timestamp'
   EQUALITY caseIgnoreMatch
@@ -182,7 +217,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.17
   NAME 'AstAccountRegistrationContext'
   DESC 'Asterisk Account Registration Context'
   EQUALITY caseIgnoreMatch
@@ -193,7 +228,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.18
   NAME 'AstAccountRegistrationExten'
   DESC 'Asterisk Account Registration Extension'
   EQUALITY caseIgnoreMatch
@@ -204,7 +239,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.19
   NAME 'AstAccountNoTransfer'
   DESC 'Asterisk Account No Transfer'
   EQUALITY caseIgnoreMatch
@@ -215,7 +250,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.20
   NAME 'AstAccountCallGroup'
   DESC 'Asterisk Account Call Group'
   EQUALITY caseIgnoreMatch
@@ -226,7 +261,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.21
   NAME 'AstAccountCanReinvite'
   DESC 'Asterisk Account Can Reinvite'
   EQUALITY caseIgnoreMatch
@@ -237,7 +272,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.22
   NAME 'AstAccountDTMFMode'
   DESC 'Asterisk Account DTMF Flags'
   EQUALITY caseIgnoreMatch
@@ -248,7 +283,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.23
   NAME 'AstAccountFromUser'
   DESC 'Asterisk Account From User'
   SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
@@ -257,7 +292,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.24
   NAME 'AstAccountFromDomain'
   DESC 'Asterisk Account From Domain'
   EQUALITY caseIgnoreMatch
@@ -268,7 +303,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.25
   NAME 'AstAccountFullContact'
   DESC 'Asterisk Account Full Contact'
   EQUALITY caseIgnoreMatch
@@ -279,7 +314,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.26
   NAME 'AstAccountHost'
   DESC 'Asterisk Account Host'
   EQUALITY caseIgnoreMatch
@@ -290,7 +325,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.27
   NAME 'AstAccountInsecure'
   DESC 'Asterisk Account Insecure'
   EQUALITY caseIgnoreMatch
@@ -301,7 +336,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.28
   NAME 'AstAccountNAT'
   DESC 'Asterisk Account NAT'
   EQUALITY caseIgnoreMatch
@@ -312,7 +347,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.29
   NAME 'AstAccountPickupGroup'
   DESC 'Asterisk Account PickupGroup'
   EQUALITY caseIgnoreMatch
@@ -323,7 +358,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.30
   NAME 'AstAccountPort'
   DESC 'Asterisk Account Port'
   EQUALITY caseIgnoreMatch
@@ -334,7 +369,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.31
   NAME 'AstAccountRestrictCID'
   DESC 'Asterisk Account Restrict CallerID'
   EQUALITY caseIgnoreMatch
@@ -345,7 +380,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.32
   NAME 'AstAccountRTPTimeout'
   DESC 'Asterisk Account RTP Timeout'
   EQUALITY caseIgnoreMatch
@@ -356,7 +391,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.33
   NAME 'AstAccountRTPHoldTimeout'
   DESC 'Asterisk Account RTP Hold Timeout'
   EQUALITY caseIgnoreMatch
@@ -367,7 +402,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.34
   NAME 'AstAccountRealmedPassword'
   DESC 'Asterisk Account Realmed Password'
   EQUALITY caseIgnoreMatch
@@ -378,7 +413,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.35
   NAME 'AstAccountAllowedCodec'
   DESC 'Asterisk Account Allowed Codec'
   EQUALITY caseIgnoreMatch
@@ -389,7 +424,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.36
   NAME 'AstAccountMusicOnHold'
   DESC 'Asterisk Account Music On Hold'
   EQUALITY caseIgnoreMatch
@@ -400,7 +435,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.37
   NAME 'AstAccountCanCallForward'
   DESC 'Asterisk Account Can Call Forward'
   EQUALITY caseIgnoreMatch
@@ -411,7 +446,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.38
   NAME 'AstAccountSecret'
   DESC 'Asterisk Account Secret'
   EQUALITY caseIgnoreMatch
@@ -422,7 +457,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.39
   NAME 'AstAccountName'
   DESC 'Asterisk Account Username'
   EQUALITY caseIgnoreMatch
@@ -433,7 +468,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.40
   NAME 'AstConfigFilename'
   DESC 'Asterisk LDAP Configuration Filename'
   EQUALITY caseIgnoreMatch
@@ -444,7 +479,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.41
   NAME 'AstConfigCategory'
   DESC 'Asterisk LDAP Configuration Category'
   EQUALITY caseIgnoreMatch
@@ -455,7 +490,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.42
   NAME 'AstConfigCategoryMetric'
   DESC 'Asterisk LDAP Configuration Category Metric'
   EQUALITY caseIgnoreMatch
@@ -466,7 +501,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.43
   NAME 'AstConfigVariableName'
   DESC 'Asterisk LDAP Configuration Variable Name'
   EQUALITY caseIgnoreMatch
@@ -477,7 +512,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.44
   NAME 'AstConfigVariableValue'
   DESC 'Asterisk LDAP Configuration Variable Value'
   EQUALITY caseIgnoreMatch
@@ -488,7 +523,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.45
   NAME 'AstConfigCommented'
   DESC 'Asterisk LDAP Configuration Commented'
   EQUALITY caseIgnoreMatch
@@ -499,7 +534,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.46
   NAME 'AstAccountIPAddress'
   DESC 'Asterisk Account IP Address'
   EQUALITY caseIgnoreMatch
@@ -510,7 +545,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.47
   NAME 'AstAccountDefaultUser'
   DESC 'Asterisk Account Default User'
   EQUALITY caseIgnoreMatch
@@ -521,7 +556,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.48
   NAME 'AstAccountRegistrationServer'
   DESC 'Asterisk Account Registration Server'
   EQUALITY caseIgnoreMatch
@@ -532,7 +567,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.49
   NAME 'AstAccountLastQualifyMilliseconds'
   DESC 'Asterisk Account Last Qualify Milliseconds'
   EQUALITY caseIgnoreMatch
@@ -543,7 +578,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.50
   NAME 'AstAccountCallLimit'
   DESC 'Asterisk Account Call Limit'
   EQUALITY caseIgnoreMatch
@@ -554,7 +589,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.51
   NAME 'AstVoicemailMailbox'
   DESC 'Asterisk voicemail mailbox'
   EQUALITY caseIgnoreMatch
@@ -565,7 +600,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.52
   NAME 'AstVoicemailPassword'
   DESC 'Asterisk voicemail password'
   EQUALITY caseIgnoreMatch
@@ -576,7 +611,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.53
   NAME 'AstVoicemailFullname'
   DESC 'Asterisk voicemail fullname'
   EQUALITY caseIgnoreMatch
@@ -587,7 +622,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.54
   NAME 'AstVoicemailEmail'
   DESC 'Asterisk voicemail email'
   EQUALITY caseIgnoreMatch
@@ -598,7 +633,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.55
   NAME 'AstVoicemailPager'
   DESC 'Asterisk voicemail pager'
   EQUALITY caseIgnoreMatch
@@ -609,7 +644,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.56
   NAME 'AstVoicemailOptions'
   DESC 'Asterisk voicemail options'
   EQUALITY caseIgnoreMatch
@@ -620,7 +655,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.57
   NAME 'AstVoicemailTimestamp'
   DESC 'Asterisk voicemail timestamp'
   EQUALITY caseIgnoreMatch
@@ -631,7 +666,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.58
   NAME 'AstVoicemailContext'
   DESC 'Asterisk voicemail context'
   EQUALITY caseIgnoreMatch
@@ -642,7 +677,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.59
   NAME 'AstAccountSubscribeContext'
   DESC 'Asterisk subscribe context'
   EQUALITY caseIgnoreMatch
@@ -653,7 +688,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.61
   NAME 'AstAccountUserAgent'
   DESC 'Asterisk account user context'
   EQUALITY caseIgnoreMatch
@@ -664,7 +699,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.62
   NAME 'AstAccountLanguage'
   DESC 'Asterisk account user language'
   EQUALITY caseIgnoreMatch
@@ -675,7 +710,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.63
   NAME 'AstAccountTransport'
   DESC 'Asterisk account transport type'
   EQUALITY caseIgnoreMatch
@@ -686,7 +721,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.64
   NAME 'AstAccountPromiscRedir'
   DESC 'Asterisk account promiscous redirects'
   EQUALITY caseIgnoreMatch
@@ -697,7 +732,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.65
   NAME 'AstAccountAccountCode'
   DESC 'Asterisk account billing code'
   EQUALITY caseIgnoreMatch
@@ -708,7 +743,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.66
   NAME 'AstAccountSetVar'
   DESC 'Asterisk account setvar'
   EQUALITY caseIgnoreMatch
@@ -719,7 +754,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.67
   NAME 'AstAccountAllowOverlap'
   DESC 'Asterisk account allow overlap dialing'
   EQUALITY caseIgnoreMatch
@@ -730,7 +765,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.68
   NAME 'AstAccountVideoSupport'
   DESC 'Asterisk account video support'
   EQUALITY caseIgnoreMatch
@@ -741,17 +776,7 @@ attributeTypes: (
 ################################################################################
 #
 attributeTypes: (
-  NAME 'AstAccountEncryption'
-  DESC 'Asterisk account enable SRTP'
-  EQUALITY caseIgnoreMatch
-  SUBSTR caseIgnoreSubstringsMatch
-  SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
-  )
-#
-################################################################################
-#
-attributeTypes: (
-  
+  1.3.6.1.4.1.22736.5.4.69
   NAME 'AstAccountIgnoreSDPVersion'
   DESC 'Asterisk account ignore SDP version'
   EQUALITY caseIgnoreMatch
@@ -761,29 +786,8 @@ attributeTypes: (
 #
 ################################################################################
 #
-attributeTypes: ( 
-  NAME 'ipaAutoAstExtension' 
-  DESC 'Enable to have freeIPA automatically create Asterisk extensions' 
-  SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE 
-  X-ORIGIN 'freeipa-asterisk'
-  )
-#
-################################################################################
-#
-attributeTypes: (
-  NAME 'ipaAutoAstTemplate' 
-  DESC 'Template for automatically created extension.'
-  EQUALITY caseIgnoreMatch
-  ORDERING caseIgnoreMatch 
-  SUBSTR caseIgnoreSubstringsMatch
-  SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
-  X-ORIGIN 'freeipa-asterisk'
-  )
-#
-################################################################################
-#
 objectClasses: (
-  
+  1.3.6.1.4.1.22736.5.2.1
   NAME 'AsteriskExtension'
   DESC 'PBX Extension Information for Asterisk'
   SUP top
@@ -795,7 +799,7 @@ objectClasses: (
 ################################################################################
 #
 objectClasses: (
-  
+  1.3.6.1.4.1.22736.5.2.2
   NAME 'AsteriskIAXUser'
   DESC 'IAX2 User information for Asterisk'
   SUP AsteriskExtension
@@ -807,19 +811,19 @@ objectClasses: (
 ################################################################################
 #
 objectClasses: (
-  
+  1.3.6.1.4.1.22736.5.2.3
   NAME 'AsteriskSIPUser'
   DESC 'SIP User information for Asterisk'
   SUP AsteriskExtension
   AUXILIARY
   MUST cn
-  MAY ( AstAccountAccountCode $ AstAccountAllowOverlap $ AstAccountAllowedCodec $ AstAccountAMAFlags $ AstAccountCallGroup $ AstAccountCallLimit $ AstAccountCallerID $ AstAccountCanCallForward $ AstAccountCanReinvite $ AstAccountContext $ AstAccountDTMFMode $ AstAccountDefaultUser $ AstAccountDeny $ AstAccountDisallowedCodec $ AstAccountExpirationTimestamp $ AstAccountFromDomain $ AstAccountFromUser $ AstAccountFullContact $ AstAccountHost $ AstAccountIgnoreSDPVersion $ AstAccountInsecure $ AstAccountIPAddress $ AstAccountLanguage $ AstAccountLastQualifyMilliseconds $ AstAccountMailbox $ AstAccountMusicOnHold $ AstAccountNAT $ AstAccountName $ AstAccountPermit $ AstAccountPickupGroup $ AstAccountPort $ AstAccountPromiscRedir $ AstAccountQualify $ AstAccountRTPHoldTimeout $ AstAccountRTPTimeout $ AstAccountRealmedPassword $ AstAccountRegistrationContext $ AstAccountRegistrationExten $ AstAccountRegistrationServer $ AstAccountRestrictCID $ AstAccountSecret $ AstAccountSetVar $ AstAccountSubscribeContext $ AstAccountTransport $ AstAccountType $ AstAccountUserAgent $ AstAccountVideoSupport $ AstAccountEncryption)
+  MAY ( AstAccountAccountCode $ AstAccountAllowOverlap $ AstAccountAllowedCodec $ AstAccountAMAFlags $ AstAccountCallGroup $ AstAccountCallLimit $ AstAccountCallerID $ AstAccountCanCallForward $ AstAccountCanReinvite $ AstAccountContext $ AstAccountDTMFMode $ AstAccountDefaultUser $ AstAccountDeny $ AstAccountDisallowedCodec $ AstAccountExpirationTimestamp $ AstAccountFromDomain $ AstAccountFromUser $ AstAccountFullContact $ AstAccountHost $ AstAccountIgnoreSDPVersion $ AstAccountInsecure $ AstAccountIPAddress $ AstAccountLanguage $ AstAccountLastQualifyMilliseconds $ AstAccountMailbox $ AstAccountMusicOnHold $ AstAccountNAT $ AstAccountName $ AstAccountPermit $ AstAccountPickupGroup $ AstAccountPort $ AstAccountPromiscRedir $ AstAccountQualify $ AstAccountRTPHoldTimeout $ AstAccountRTPTimeout $ AstAccountRealmedPassword $ AstAccountRegistrationContext $ AstAccountRegistrationExten $ AstAccountRegistrationServer $ AstAccountRestrictCID $ AstAccountSecret $ AstAccountSetVar $ AstAccountSubscribeContext $ AstAccountTransport $ AstAccountType $ AstAccountUserAgent $ AstAccountVideoSupport )
   )
 #
 ################################################################################
 #
 objectClasses: (
-  
+  1.3.6.1.4.1.22736.5.2.4
   NAME 'AsteriskConfig'
   DESC 'Asterisk configuration Information'
   SUP top
@@ -831,7 +835,7 @@ objectClasses: (
 ################################################################################
 #
 objectClasses: (
-  
+  1.3.6.1.4.1.22736.5.2.5
   NAME 'AsteriskVoiceMail'
   DESC 'Asterisk voicemail information'
   SUP top
@@ -843,7 +847,7 @@ objectClasses: (
 ################################################################################
 #
 objectClasses: (
-  
+  1.3.6.1.4.1.22736.5.2.6
   NAME 'AsteriskDialplan'
   DESC 'Asterisk Dialplan Information'
   SUP top
@@ -854,7 +858,7 @@ objectClasses: (
 ################################################################################
 #
 objectClasses: (
-  
+  1.3.6.1.4.1.22736.5.2.7
   NAME 'AsteriskAccount'
   DESC 'Asterisk Account Information'
   SUP top
@@ -865,7 +869,7 @@ objectClasses: (
 ################################################################################
 #
 objectClasses: (
-  
+  1.3.6.1.4.1.22736.5.2.8
   NAME 'AsteriskMailbox'
   DESC 'Asterisk Mailbox Information'
   SUP top
@@ -875,12 +879,3 @@ objectClasses: (
 #
 ################################################################################
 #
-objectClasses: (
-  NAME 'AsteriskSiteDefaults'
-  DESC 'Asterisk Site Default Values'
-  SUP AsteriskExtension
-  AUXILIARY
-  MUST cn
-  MAY ( AstAccountAllowOverlap $$ AstAccountAllowedCodec $$ AstAccountAMAFlags $$ AstAccountCallLimit $$ AstAccountCanReinvite $$ AstAccountDTMFMode $$ AstAccountDeny $$ AstAccountDisallowedCodec $$ AstAccountFromDomain $$ AstAccountIgnoreSDPVersion $$ AstAccountLanguage $$ AstAccountMusicOnHold $$ AstAccountNAT $$ AstAccountPermit $$ AstAccountQualify $$ AstAccountRTPHoldTimeout $$ AstAccountRTPTimeout $$ AstAccountRegistrationContext $$ AstAccountRegistrationServer $$ AstAccountSubscribeContext $$ AstAccountTransport $$ AstAccountType $$ AstAccountVideoSupport $$ AstVoicemailOptions $$ AstVoicemailTimestamp $$ AstVoicemailContext $$ AstAccountEncryption $$ ipaAutoAstExtension $$ ipaAutoAstTemplate )
-  X-ORIGIN 'freeipa-asterisk'
-  )

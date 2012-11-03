@@ -1,0 +1,476 @@
+
+#Asterisk 1.8 Queue Attributes
+attributeTypes: (
+    NAME 'ipaAstQueueAnnounce'
+    DESC 'Asterisk LDAP Queue Announce'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstQueueAnnounceholdtime'
+    DESC 'Asterisk LDAP Queue Announceholdtime'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstQueueCallswaiting'
+    DESC 'Asterisk LDAP Queue Callswaiting'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstQueueContext'
+    DESC 'Asterisk LDAP Queue Context'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstQueueEventmemberstatus'
+    DESC 'Asterisk LDAP Queue Eventmemberstatus'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstQueueEventwhencalled'
+    DESC 'Asterisk LDAP Queue Eventwhencalled'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstQueueFrequency'
+    DESC 'Asterisk LDAP Queue Frequency'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstQueueHoldtime'
+    DESC 'Asterisk LDAP Queue Holdtime'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstQueueInterface'
+    DESC 'Asterisk LDAP Queue Interface'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstQueueJoinempty'
+    DESC 'Asterisk LDAP Queue QueueJoinempty'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstQueueLeavewhenempty'
+    DESC 'Asterisk LDAP Queue Leavewhenempty'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstQueueLessthan'
+    DESC 'Asterisk LDAP Queue Lessthan'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstQueueMaxlen'
+    DESC 'Asterisk LDAP Queue Maxlen'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstQueueMemberdelay'
+    DESC 'Asterisk LDAP Queue Memberdelay'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstQueueMembername'
+    DESC 'Asterisk LDAP Queue Membername'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstQueueMemberof'
+    DESC 'Asterisk LDAP Queue Memberof'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstQueueMinutes'
+    DESC 'Asterisk LDAP Queue Minutes'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstQueueMoh'
+    DESC 'Asterisk LDAP Queue Music on Hold'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstQueueMonformat'
+    DESC 'Asterisk LDAP Queue Monitor Format'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstQueueMonjoin'
+    DESC 'Asterisk LDAP Queue Monitor Join'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstQueueName'
+    DESC 'Asterisk LDAP Queue Name'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstQueuePaused'
+    DESC 'Asterisk LDAP Queue Paused'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstQueuePenality'
+    DESC 'Asterisk LDAP Queue Penality'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstQueuePeriodicannounce'
+    DESC 'Asterisk LDAP Queue Periodicannounce'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstQueuePeriodicannouncefrequency'
+    DESC 'Asterisk LDAP Queue Periodicannouncefrequency'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstQueueReporthold'
+    DESC 'Asterisk LDAP Queue Reporthold'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstQueueReportholdtime'
+    DESC 'Asterisk LDAP Queue Reportholdtime'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstQueueRetry'
+    DESC 'Asterisk LDAP Queue QueueRetry'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstQueueRoundseconds'
+    DESC 'Asterisk LDAP Queue Roundseconds'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstQueueSeconds'
+    DESC 'Asterisk LDAP Queue Seconds'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstQueueServicelevel'
+    DESC 'Asterisk LDAP Queue Service Level'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstQueueStrategy'
+    DESC 'Asterisk LDAP Queue Strategy'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstQueueThankyou'
+    DESC 'Asterisk LDAP Queue Thankyou'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstQueueThereare'
+    DESC 'Asterisk LDAP Queue Thereare'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstQueueTimeout'
+    DESC 'Asterisk LDAP Queue Timeout'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstQueueTimeoutrestart'
+    DESC 'Asterisk LDAP Queue Timeoutrestart'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstQueueWeight'
+    DESC 'Asterisk LDAP Queue Weight'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstQueueWrapuptime'
+    DESC 'Asterisk LDAP Queue Wrapuptime'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstQueueYouarenext'
+    DESC 'Asterisk LDAP Queue Youarenext'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+
+#Asterisk 1.8 Voicemail attributes
+attributeTypes: (
+    NAME 'ipaAstVMAttach'
+    DESC 'Asterisk LDAP VM Attach'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstVMCallback'
+    DESC 'Asterisk LDAP VM Callback'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstVMContext'
+    DESC 'Asterisk LDAP VM Context'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstVMDelete'
+    DESC 'Asterisk LDAP VM Delete'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstVMDialout'
+    DESC 'Asterisk LDAP VM Dialout'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstVMEmail'
+    DESC 'Asterisk LDAP VM Email'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstVMEnvelope'
+    DESC 'Asterisk LDAP VM Envelope'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstVMForcegreetings'
+    DESC 'Asterisk LDAP VM Force Greetings'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstVMForcename'
+    DESC 'Asterisk LDAP VM ForceName'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstVMFullname'
+    DESC 'Asterisk LDAP VM Fullname'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstVMHidefromdir'
+    DESC 'Asterisk LDAP VM Hide Fromdir'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstVMMailbox'
+    DESC 'Asterisk LDAP VM Mailbox'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstVMNextastercmd'
+    DESC 'Asterisk LDAP VM Next aster cmd'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstVMOperator'
+    DESC 'Asterisk LDAP VM Operator'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstVMPager'
+    DESC 'Asterisk LDAP VM Pager'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstVMPassword'
+    DESC 'Asterisk LDAP VM Password'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstVMReview'
+    DESC 'Asterisk LDAP VM Review'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstVMSaycid'
+    DESC 'Asterisk LDAP VM Say CID'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstVMSayduration'
+    DESC 'Asterisk LDAP VM Say Duration'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstVMSaydurationm'
+    DESC 'Asterisk LDAP VM Say durationm'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstVMSendvoicemail'
+    DESC 'Asterisk LDAP VM SendVoicemail'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstVMStamp'
+    DESC 'Asterisk LDAP VM Time Stamp'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+attributeTypes: (
+    NAME 'ipaAstVMTz'
+    DESC 'Asterisk LDAP VM TimeZone'
+    EQUALITY caseIgnoreMatch
+    SUBSTR caseIgnoreSubstringsMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+    )
+
+#freeipa-asterisk specific attributes
+attributeTypes: (
+   NAME 'ipaAstAutoExtension' 
+   DESC 'Enable to have freeIPA automatically create Asterisk extensions' 
+   SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 SINGLE-VALUE 
+   X-ORIGIN 'freeipa-asterisk'
+   )
+attributeTypes: (
+   NAME 'ipaAstAutoTemplate' 
+   DESC 'Template for automatically created extension.'
+   EQUALITY caseIgnoreMatch ORDERING caseIgnoreMatch 
+   SUBSTR caseIgnoreSubstringsMatch
+   SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+   X-ORIGIN 'freeipa-asterisk'
+   )
+
+#Standard Asterisk 1.8 objectClasses
+objectClasses: (
+   NAME 'ipaAstVoiceMail'
+   DESC 'Asterisk extra voicemail information'
+   SUP top AUXILIARY
+   MUST ( 
+     ipaAstVMContext $
+     ipaAstVMMailbox $
+     ipaAstVMPassword $
+     cn
+   )
+   MAY (
+     ipaAstVMEmail $
+     ipaAstVMFullname $
+     ipaAstVMOptions $
+     ipaAstVMPager $
+     ipaAstVMTimestamp
+   )
+   )
+
+
